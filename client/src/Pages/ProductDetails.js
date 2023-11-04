@@ -1,20 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Rating from '../Components/Rating'
-import products from '../allProducts'
+// import products from '../allProducts'
 
 
 const ProductDetails = () => {
   // const { id } = (products.id)
-  const { id } = useParams();
+  const { _id } = useParams();
   // const singleProduct = products.find((p) => { return p._id === parseInt(match.params.id) })
   // const singleProduct = products.find((p) => { return String(p._id) === (id) })
-  const singleProduct = products.find(obj => obj.id === id)
 
-  if (!singleProduct) return null;
+  const [products, setProducts] = useState([])
+  // const [error] = useState([])
+
+  const singleProduct = products.find(obj => obj._id === _id)
+  // if (!singleProduct) return null;
+
+
+
+  useEffect(() => {
+    fetch('http://localhost:4000/products')
+      .then(response => response.json())
+      .then(res => setProducts(res))
+      .catch((err) => {
+        console.log(err)
+      })
+
+  }, [])
+  
   return (
     <>
       <Header />
@@ -22,7 +38,7 @@ const ProductDetails = () => {
         <div className="relative m-3 flex flex-wrap mx-auto justify-center">
           <div className="relative block lg:flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
             <div className="relative m-9 lg:m-0 w-4/5 lg:w-2/5 shrink-0 overflow-hidden rounded-xl lg:rounded-r-none bg-white bg-clip-border text-gray-700">
-              <img key={singleProduct.id}
+              <img key={singleProduct._id}
                 alt={singleProduct.imageAlt}
                 src={singleProduct.imageSrc}
                 className="h-full w-full object-cover" />

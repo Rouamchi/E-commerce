@@ -2,13 +2,26 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rouamchi/E-commerce.git"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
+    "ejs": "^3.1.9",
     "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "http-errors": "^2.0.0",
+    "jade": "^1.11.0",
+    "mongoose": "^8.0.0",
+    "mongoose-deep-populate": "^3.2.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^3.0.1"
   }
 }
