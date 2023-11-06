@@ -8,11 +8,6 @@ router.get('/', async function (req, res, next) {
   res.send(products);
 });
 
-// router.get(`/${_id}`, async function (req, res, next) {
-//   const products = await Products._id.find()
-//   res.send(products);
-// });
-
 router.post('/', async function (req, res, next) {
   const { name, imageSrc, imageAlt, brand, category, countInStock, price, color, rating } = req.body
   const newProduct = await Products.create({

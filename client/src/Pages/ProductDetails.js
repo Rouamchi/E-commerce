@@ -4,32 +4,52 @@ import Footer from "../Components/Footer"
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Rating from '../Components/Rating'
-// import products from '../allProducts'
 
+
+// const ProductDetails = () => {
+//   const { _id } = useParams();
+
+// const singleProduct = products.find((p) => { return p._id === parseInt(match.params._id) })
+// const singleProduct = products.find((p) => { return String(p._id) === (_id) })
+
+// const [products, setProducts] = useState([])
+// const [error] = useState([])
+
+// const singleProduct = products.find(obj => obj._id === _id)
+// if (!singleProduct) return null;
+
+
+// useEffect(() => {
+//   fetch('http://localhost:4000/products')
+//     .then(response => response.json())
+//     .then(res => setProducts(res))
+//     .catch((err) => {
+//       console.log(err)
+//     })
+
+// }, [_id])
 
 const ProductDetails = () => {
-  const { _id } = useParams();
-
-  // const singleProduct = products.find((p) => { return p._id === parseInt(match.params._id) })
-  // const singleProduct = products.find((p) => { return String(p._id) === (_id) })
-
+  const { id } = useParams();
   const [products, setProducts] = useState([])
-  // const [error] = useState([])
 
-  const singleProduct = products.find(obj => obj._id === _id)
-  // if (!singleProduct) return null;
 
+  const singleProduct = products.find(obj => obj._id === id)
 
   useEffect(() => {
-    fetch(`http://localhost:4000/products/${_id}`)
-      .then(response => response.json())
-      .then(res => setProducts(res))
+    fetch('http://localhost:4000/products')
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data)
+
+      })
+
       .catch((err) => {
         console.log(err)
       })
 
-  }, [_id])
-  
+  }, [])
+
   return (
     <>
       <Header />
@@ -96,7 +116,7 @@ const ProductDetails = () => {
               </Link>
             </div>
 
-            
+
           </div>
         </div>
       </div>
