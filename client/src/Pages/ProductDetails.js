@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 import { useParams } from 'react-router-dom'
@@ -8,10 +8,10 @@ import Rating from '../Components/Rating'
 
 
 const ProductDetails = () => {
-  // const { id } = (products.id)
   const { _id } = useParams();
-  // const singleProduct = products.find((p) => { return p._id === parseInt(match.params.id) })
-  // const singleProduct = products.find((p) => { return String(p._id) === (id) })
+
+  // const singleProduct = products.find((p) => { return p._id === parseInt(match.params._id) })
+  // const singleProduct = products.find((p) => { return String(p._id) === (_id) })
 
   const [products, setProducts] = useState([])
   // const [error] = useState([])
@@ -20,16 +20,15 @@ const ProductDetails = () => {
   // if (!singleProduct) return null;
 
 
-
   useEffect(() => {
-    fetch('http://localhost:4000/products')
+    fetch(`http://localhost:4000/products/${_id}`)
       .then(response => response.json())
       .then(res => setProducts(res))
       .catch((err) => {
         console.log(err)
       })
 
-  }, [])
+  }, [_id])
   
   return (
     <>
@@ -96,6 +95,8 @@ const ProductDetails = () => {
                 </div>
               </Link>
             </div>
+
+            
           </div>
         </div>
       </div>
