@@ -11,10 +11,14 @@ router.get('/', async function (req, res, next) {
 router.post('/', async function (req, res, next) {
   const { name, imageSrc, imageAlt, brand, category, countInStock, price, color, rating } = req.body
   const newProduct = await Products.create({
-    name, imageSrc,
-    imageAlt, brand,
-    category, countInStock,
-    price, color, rating,
+    name, 
+    imageSrc,
+    imageAlt, 
+    brand,
+    category, 
+    countInStock,
+    price, color, 
+    rating,
     createdAt: new Date(),
   })
   res.send(newProduct)
@@ -23,10 +27,14 @@ router.put('/', async function (req, res, next) {
   const { name, imageSrc, imageAlt, brand, category, countInStock, price, color, rating, _id } = req.body
   const newProduct = await Products.findByIdAndUpdate(_id,
     {
-      name, imageSrc,
-      imageAlt, brand,
-      category, countInStock,
-      price, color, rating,
+      name, 
+      imageSrc,
+      imageAlt, 
+      brand,
+      category, 
+      countInStock,
+      price, color, 
+      rating,
     }, { new: true })
   res.send(newProduct);
 })

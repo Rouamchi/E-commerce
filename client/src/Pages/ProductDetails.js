@@ -70,7 +70,8 @@ const ProductDetails = () => {
                         </div>
                       </>
                       : <div className=" mb-2 rounded-sm py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white bg-red-500 transition-all active:bg-red-600">
-                        "Out Of Stock"</div>}
+                        "Out Of Stock"</div>
+                        }
                   </button>
 
                 </div>
@@ -85,7 +86,7 @@ const ProductDetails = () => {
                   <div className="mt-4 lg:ml-8 block lg:flex justify-center gap-x-3">
                     <button href="/ShoppingCart" className="py-2 px-4 ml-4 bg-gray-600 text-white font-semibold border border-transparent rounded hover:bg-white hover:text-gray-600 hover:border-gray-600 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
                       type='button'
-                      disabled={singleProduct.countInStock === 0}>
+                      disabled = {singleProduct.countInStock === 0}>
                       Add To Cart</button>
                     <Link to="/" className="ml-3 lg py-2 px-4 bg-transparent text-gray-600 font-semibold border border-gray-600 rounded hover:bg-gray-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
                       Go Back</Link>
