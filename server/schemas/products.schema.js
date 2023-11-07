@@ -1,33 +1,44 @@
 const mongoose = require('mongoose');
 const deepPopulate = require('mongoose-deep-populate')(mongoose);
 const findVisible = require('./findVisible')
+
+const reviewSchema = new mongoose.Schema(
+  {
+    name:{type: String, required: true},
+    rating: {type: Number, required: true},
+    comment:{type: String, required: true},
+  },
+  {
+    createdAt: Date,
+  }
+)
 const ProductsSchema = new mongoose.Schema({
 
-  id: String,
-  name: String,
-  imageSrc: String,
-  imageAlt: String,
-  // category:{type:mongoose.Schema.Types.ObjectId, ref: 'Categories'},
-  // brand:{type:mongoose.Schema.Types.ObjectId, ref: 'Brands'},
-  category: String,
-  brand: String,
-  countInStock: Number,
-  price: String,
+  users: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Users'},
+  name: {type: String, required: true},
+  imageSrc: {type: String, required: true},
+  imageAlt: {type: String, required: true},
+  description:{type: String, required: true},
+  brand: {type: String, required: true},
+  category: {type: String, required: true},
+  price: {type: Number, required: true, default: 0},
+  countInStock: {type: Number, required: true, default: 0},
+  rating: {type: Number, required: true, default: 0},
+  reviews:[reviewSchema],
   color: String,
-  rating: Number,
   createdAt: Date,
-  isVisible: {type: Boolean, default: true},
+  isVisible: { type: Boolean, default: true },
 
 })
 
 const population = [
   {
     path: 'category',
-    match: {isVisible: true}
+    match: { isVisible: true }
   },
   {
     path: 'brand',
-    match: {isVisible: true}
+    match: { isVisible: true }
   }
 ]
 

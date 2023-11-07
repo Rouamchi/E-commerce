@@ -48,30 +48,28 @@ const ProductDetails = () => {
                   {singleProduct.name}
                 </Link>
                 <p className="mb-4 mt-4 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                  Like so many organizations these days, Autodesk is a company in
-                  transition. It was until recently a traditional boxed software company
-                  selling licenses. Yet its own business model disruption is only part of the story
+                  {singleProduct.description}
                 </p>
 
                 <div className="relative block lg:flex w-full">
                   {/* Price */}
-                  <div className="mt-2 h-10 w-28 mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-gray-800 antialiased">
-                    Price: {singleProduct.price}
+                  <div className="mt-2 w-32 h-8 block font-sans text-xl font-semibold leading-snug tracking-normal text-gray-800 antialiased">
+                    Price: {singleProduct.price}$
                   </div>
 
                   {/* In Stock */}
                   <button className='flex lg:ml-14 select-none items-center gap-2 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none' type="button">
                     {singleProduct.countInStock > 0
                       ? <>
-                        <div className="rounded-sm py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white bg-green-500 transition-all active:bg-green-600">
+                        <div className=" mt-1 rounded-sm py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white bg-green-500 transition-all active:bg-green-600">
                           InStock</div>
-                        <div className="mb-4 mt-4 lg:ml-4 block text-base text-gray-600 antialiased">
+                        <div className="mb-0 mt-1 lg:ml-4 block text-base text-gray-600 antialiased">
                           Quantity : {singleProduct.countInStock}
                         </div>
                       </>
-                      : <div className=" mb-2 rounded-sm py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white bg-red-500 transition-all active:bg-red-600">
+                      : <div className=" mb-1 rounded-sm py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white bg-red-500 transition-all active:bg-red-600">
                         "Out Of Stock"</div>
-                        }
+                    }
                   </button>
 
                 </div>
@@ -86,7 +84,7 @@ const ProductDetails = () => {
                   <div className="mt-4 lg:ml-8 block lg:flex justify-center gap-x-3">
                     <button href="/ShoppingCart" className="py-2 px-4 ml-4 bg-gray-600 text-white font-semibold border border-transparent rounded hover:bg-white hover:text-gray-600 hover:border-gray-600 transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0"
                       type='button'
-                      disabled = {singleProduct.countInStock === 0}>
+                      disabled={singleProduct.countInStock === 0}>
                       Add To Cart</button>
                     <Link to="/" className="ml-3 lg py-2 px-4 bg-transparent text-gray-600 font-semibold border border-gray-600 rounded hover:bg-gray-600 hover:text-white hover:border-transparent transition ease-in duration-200 transform hover:-translate-y-1 active:translate-y-0">
                       Go Back</Link>

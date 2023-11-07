@@ -49,7 +49,7 @@ const Home = () => {
                     </div>
                     <div>
                       <p className="text-2xl mb-3 font-medium text-gray-900">
-                        {singleProduct.price}</p>
+                        {singleProduct.price}$</p>
                       <Link to="/ProductDetails" className="py-1 px-4 mt-2 mr-4 pb-2 bg-gray-500/80 text-white font-semibold rounded hover:bg-white hover:text-gray-600 hover:border-gray-500 transition ease-in duration-200 transform active:translate-y-0">
                         Buy</Link>
                     </div>
