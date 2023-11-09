@@ -10,7 +10,7 @@
 //     brand: "Zara",
 //     category: "Men",
 //     countInStock: 3,
-//     price: '35$',
+//     price: 25.36,
 //     color: 'Black',
 //     rating: 1,
 //   },
@@ -23,7 +23,7 @@
 //     brand: "Zara",
 //     category: "Women",
 //     countInStock: 0,
-//     price: '35$',
+//     price: 15.99,
 //     color: 'Black',
 //     rating: 3,
 //   },
@@ -36,7 +36,7 @@
 //     brand: "Lacoste",
 //     category: "Men",
 //     countInStock: 1,
-//     price: '35$',
+//     price: 30.69,
 //     color: 'Black',
 //     rating: 4
 //   },
@@ -49,7 +49,7 @@
 //     brand: "Gucci",
 //     category: "Women",
 //     countInStock: 20,
-//     price: '35$',
+//     price: 26.49,
 //     color: 'Black',
 //     rating: 3
 //   },
@@ -62,7 +62,7 @@
 //     brand: "Lacoste",
 //     category: "Women",
 //     countInStock: 5,
-//     price: '55$',
+//     price: 22.5,
 //     color: 'Black',
 //     rating: 2
 //   },
@@ -75,7 +75,7 @@
 //     brand: "Nike",
 //     category: "Women",
 //     countInStock: 3,
-//     price: '75$',
+//     price: 35.22,
 //     color: 'Black',
 //     rating: 5
 //   },
@@ -88,7 +88,7 @@
 //     brand: "Nike",
 //     category: "Men",
 //     countInStock: 0,
-//     price: '15$',
+//     price: 15.8,
 //     color: 'Black',
 //     rating: 4
 //   },
@@ -101,7 +101,7 @@
 //     brand: "Gucci",
 //     category: "Men",
 //     countInStock: 9,
-//     price: '25$',
+//     price: 41.99,
 //     color: 'Black',
 //     rating: 2
 //   },
