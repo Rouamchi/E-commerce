@@ -14,7 +14,7 @@ const reviewSchema = new mongoose.Schema(
 )
 const ProductsSchema = new mongoose.Schema({
 
-  users: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Users'},
+  users: { type: mongoose.Schema.Types.ObjectId, ref: 'Users'},
   name: {type: String, required: true},
   imageSrc: {type: String, required: true},
   imageAlt: {type: String, required: true},
@@ -32,6 +32,10 @@ const ProductsSchema = new mongoose.Schema({
 })
 
 const population = [
+  {
+    path: 'users',
+    match: { isVisible: true }
+  },
   {
     path: 'category',
     match: { isVisible: true }
